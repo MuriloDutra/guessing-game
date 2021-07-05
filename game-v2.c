@@ -11,7 +11,7 @@ int main(void){
     int numbers_are_equal;
     int won_the_game = 0;
     int counter = 1;
-    int score = 1000;
+    double score = 1000;
 
     while(!won_the_game){
         printf("TENTATIVA - %d\n\n", counter);
@@ -39,12 +39,12 @@ int main(void){
         }
         printf("\n");
         counter++;
-        int lost_points = (user_attempt - secret_number) / 2;
+        double lost_points = (user_attempt - secret_number) / 2.0;
 
         score -= (lost_points < 0)
             ? (-lost_points)
             : lost_points;
     }
     printf("Você acertou em %d tentativas.\n", counter - 1);
-    printf("Total de pontos: %d\n", score);
+    printf("Total de pontos: %.2f\n", score);
 }
