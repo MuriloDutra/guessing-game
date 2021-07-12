@@ -39,7 +39,7 @@ int main(void){
         }
         printf("\n");
         counter++;
-        double lost_points = (user_attempt - secret_number) / 2.0;
+        double lost_points = (user_attempt - secret_number) / (double) 2;
 
         score -= (lost_points < 0)
             ? (-lost_points)
