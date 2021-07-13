@@ -11,7 +11,8 @@ int main(void)
 
     while(counter < 11)
     {
-        printf("%dx%d=%d\n", given_number, counter, (given_number * counter));
+        int multiplication = given_number * counter;
+        printf("%dx%d=%d\n", given_number, counter, multiplication);
         counter++;
     }
 }
