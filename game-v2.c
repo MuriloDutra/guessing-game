@@ -2,11 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 
+void print_castle();
+void print_smile();
+void print_sad_face();
+
 int main(void){
     printf("\n");
-    printf("*************************************\n");
-    printf("* Bem-vindo ao jogo de Adivinhação! *\n");
-    printf("*************************************\n\n");
+    
+    print_castle();
+    printf("\n\n\n");
 
     int seconds = time(0);
     srand(seconds);
@@ -65,9 +69,75 @@ int main(void){
     }
 
     if(numbers_are_equal){
+        print_smile();
         printf("Você ganhou, PARABÉNS!\n");
         printf("Você acertou em %d tentativas.\n", counter);
         printf("Total de pontos: %.2f\n", score);
-    }else
+    }else{
+        print_sad_face();
         printf("Você perdeu, tente novamente.");
+    }
+}
+
+
+void print_castle()
+{
+    //ASCII ART: https://www.asciiart.eu/buildings-and-places/castles
+    printf("   /\\                                                        /\\       \n");
+    printf("  |  |                                                      |  |        \n");
+    printf(" /----\\                  Bem-vindo ao                      /----\\     \n");
+    printf("[______]             Jogo de Adivinhação                  [______]      \n");
+    printf(" |    |         _____                        _____         |    |        \n");
+    printf(" |[]  |        [     ]                      [     ]        |  []|        \n");
+    printf(" |    |       [_______][ ][ ][ ][][ ][ ][ ][_______]       |    |        \n");
+    printf(" |    [ ][ ][ ]|     |  ,----------------,  |     |[ ][ ][ ]    |        \n");
+    printf(" |             |     |/'    ____..____    '\\|     |             |       \n");
+    printf("  \\  []        |     |    /'    ||    '\\    |     |        []  /        \n");
+    printf("   |      []   |     |   |o     ||     o|   |     |  []       |            \n");
+    printf("   |           |  _  |   |     _||_     |   |  _  |           |            \n");
+    printf("   |   []      | (_) |   |    (_||_)    |   | (_) |       []  |            \n");
+    printf("   |           |     |   |     (||)     |   |     |           |            \n");
+    printf("   |           |     |   |      ||      |   |     |           |            \n");
+    printf(" /''           |     |   |o     ||     o|   |     |           ''\\       \n");  
+    printf("[_____________[_______]--'------''------'--[_______]_____________]      \n");
+}
+
+void print_smile()
+{
+    printf("                    *****************                       \n");
+    printf("               ******               ******                  \n");
+    printf("           ****                           ****              \n");
+    printf("        ****                                 ***            \n");
+    printf("      ***                                       ***         \n");
+    printf("     **           ***               ***           **        \n");
+    printf("   **           *******           *******          ***      \n");
+    printf("  **            *******           *******            **     \n");
+    printf(" **             *******           *******             **    \n");
+    printf(" **               ***               ***               **    \n");
+    printf("**                                                     **   \n");
+    printf("**       *                                     *       **   \n");
+    printf("**      **                                     **      **   \n");
+    printf(" **   ****                                     ****   **    \n");
+    printf(" **      **                                   **      **    \n");
+    printf("  **       ***                             ***       **     \n");
+    printf("   ***       ****                       ****       ***      \n");
+    printf("     **         ******             ******         **        \n");
+    printf("      ***            ***************            ***         \n");
+    printf("        ****                                 ****           \n");
+    printf("           ****                           ****              \n");
+    printf("               ******               ******                  \n");
+    printf("                    *****************                       \n");
+}
+
+void print_sad_face()
+{
+    printf("     .-''''''-.      \n");
+    printf("   .'          '.    \n");
+    printf("  /   O      O   \\  \n");
+    printf(" :           `    :  \n");
+    printf(" |                |  \n");
+    printf(" :    .------.    :  \n");
+    printf("  \\  '        '  /  \n");
+    printf("   '.          .'    \n");
+    printf("     '-......-'      \n");
 }
